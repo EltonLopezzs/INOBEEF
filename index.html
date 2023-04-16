@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Calculadora de Ganho de Massa Bovina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>INOVAÇÃO E TECNOLOGIA NA SUA PROPRIEDADE</h1>
+
+	<h2 style="margin-left: 100px;">Calculadora de Ganho de Massa Bovina</h2>
+
+
+
+    <img src="logo.jpg" width="200px" height="150px" style="margin-left: 45%;" alt="">
+    
+	<form>
+		<label for="pesoInicial">Peso inicial (kg): </label>
+		<input type="number" id="pesoInicial" name="pesoInicial" required><br>
+
+		<label for="pesoFinal">Peso final (kg): </label>
+		<input type="number" id="pesoFinal" name="pesoFinal" required><br>
+
+		<label for="diasTranscorridos">Dias transcorridos: </label>
+		<input type="number" id="diasTranscorridos" name="diasTranscorridos" required><br>
+
+		<button type="button" onclick="calcularGanho()">Calcular</button><br><br>
+
+		<label for="resultado">Ganho diário de peso: </label>
+		<span id="resultado"></span> kg<br>
+
+		<label for="total">Total de ganho de peso: </label>
+		<span id="total"></span> kg
+        
+        <ol style="margin-left: 80%;" >
+            <li style="color: aliceblue;">ANA CAROLINA</li>
+            <li style="color: aliceblue;">GABRIELA LIMA</li>
+            <li style="color: aliceblue;">GABRIELA CIRILO</li>
+            <li style="color: aliceblue;">GABRIELA FERNANDES</li>
+            <li style="color: aliceblue;">LUCAS FREITAS</li>
+            <li style="color: aliceblue;">MATHEUS HENRIQUE</li>
+            <li style="color: aliceblue;">MARIANA DIAS</li>
+            <li style="color: aliceblue;">KARINI SILVA</li>
+            
+        </ol>
+	</form>
+
+	<script>
+		function calcularGanho() {
+			var pesoInicial = parseFloat(document.getElementById("pesoInicial").value);
+			var pesoFinal = parseFloat(document.getElementById("pesoFinal").value);
+			var diasTranscorridos = parseFloat(document.getElementById("diasTranscorridos").value);
+
+			var ganhoDiario = (pesoFinal - pesoInicial) / diasTranscorridos;
+			var totalGanho = (pesoFinal - pesoInicial);
+
+			document.getElementById("resultado").innerHTML = ganhoDiario.toFixed(2);
+			document.getElementById("total").innerHTML = totalGanho.toFixed(2);
+		}
+	</script>
+</body>
+</html>
